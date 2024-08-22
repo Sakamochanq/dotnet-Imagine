@@ -47,3 +47,17 @@ Released under the [MIT](https://github.com/Sakamochanq/dotnet-Imagine/blob/mast
 <div align="center">
     <h3>Apps Created</h3>
 </div>
+
+### [Image-Coupling](./src/Image-Coupling/)
+
+You can create PDF documents from multiple images.  
+The "PDFSharpCore" package must be installed.
+```
+dotnet add package PdfSharpCore --version 1.3.65
+```
+
+<div align="left">
+    <a href="#">
+        <img src="./assets/images/Image-Coupling.gif" width="400px">
+    </a>
+</div>
