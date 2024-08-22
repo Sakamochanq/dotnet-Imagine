@@ -25,7 +25,7 @@ All the tools are open source, allowing for modification and free usage.
 
 Clone
 ```
-https://github.com/Sakamochanq/dotnet-Imagine.git
+git clone https://github.com/Sakamochanq/dotnet-Imagine.git
 ```
 Change Directory
 ```
