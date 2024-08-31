@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.IO;
 using System;
+using SixLabors.Fonts;
 
 //The "PDFSharpCore" package must be installed.
 //dotnet add package PdfSharpCore --version 1.3.65
@@ -118,6 +119,10 @@ namespace Image_Coupling
                     progressBar.Maximum = ImageListView.Items.Count;
                     progressBar.Step = 1;
 
+                    //操作不可
+                    ConvertAsButton.Enabled = false;
+                    TruePageCheckBox.Enabled = false;
+
                     try
                     {
                         // PDFの作成開始
@@ -158,6 +163,27 @@ namespace Image_Coupling
                                     using (XGraphics xg = XGraphics.FromPdfPage(page))
                                     {
                                         xg.DrawImage(image, 0, 0);
+
+                                        if (TruePageCheckBox.Checked)
+                                        {
+                                            LoggerLabel.Text = "ページ数を描画中... " + Path.GetFileName(filePath);
+                                            Application.DoEvents();
+
+                                            //ページ数の描画
+                                            string pageNumber = processed_images.ToString();
+                                            XFont font = new XFont("Arial", 20, XFontStyle.Bold);
+                                            XBrush brushBlack = XBrushes.Black;
+                                            XBrush brushWhite = XBrushes.White;
+
+                                            // 黒い縁取り（少し大きめ）
+                                            xg.DrawString(pageNumber, font, brushBlack, new XPoint(9, 29));
+                                            xg.DrawString(pageNumber, font, brushBlack, new XPoint(11, 29));
+                                            xg.DrawString(pageNumber, font, brushBlack, new XPoint(9, 31));
+                                            xg.DrawString(pageNumber, font, brushBlack, new XPoint(11, 31));
+
+                                            // 白い文字（少し小さめ）
+                                            xg.DrawString(pageNumber, font, brushWhite, new XPoint(10, 30));
+                                        }
                                     }
                                 }
                             }
@@ -171,6 +197,10 @@ namespace Image_Coupling
                             progressBar.Value = progressBar.Maximum;
 
                             LoggerLabel.Text = "PDFの作成が完了しました。";
+
+                            //操作可能
+                            ConvertAsButton.Enabled = true;
+                            TruePageCheckBox.Enabled = true;
 
                             //Timerを開始
                             waitTimer.Start();
@@ -262,6 +292,12 @@ namespace Image_Coupling
             //Translation English.
             //You can create a PDF document from multiple images. Simply select the directory with the image files from File (F) and click Output PDF.
             MessageBox.Show("複数枚の画像からPDFドキュメントを作成することが出来ます。\nファイル(F)から画像ファイルのあるディレクトリを選択し、\nPDFの出力をクリックするだけです。","Image Coupling",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private void ReStartButton_Click(object sender, EventArgs e)
+        {
+            //アプリの再起動
+            Application.Restart();
         }
     }
 }

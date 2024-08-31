@@ -36,19 +36,22 @@
             this.ConvertImageButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.表示VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.IsTopMostCheckBox = new System.Windows.Forms.ToolStripMenuItem();
+            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenHelpButton = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LoggerLabel = new System.Windows.Forms.Label();
             this.ImageListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ImagePreviewBox = new System.Windows.Forms.PictureBox();
             this.ConvertAsButton = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.表示VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.IsTopMostCheckBox = new System.Windows.Forms.ToolStripMenuItem();
-            this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.OpenHelpButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.TruePageCheckBox = new System.Windows.Forms.CheckBox();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ReStartButton = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagePreviewBox)).BeginInit();
@@ -118,6 +121,44 @@
             this.ExitButton.Text = "終了";
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // 表示VToolStripMenuItem
+            // 
+            this.表示VToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.IsTopMostCheckBox,
+            this.toolStripMenuItem3,
+            this.ReStartButton});
+            this.表示VToolStripMenuItem.Name = "表示VToolStripMenuItem";
+            this.表示VToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
+            this.表示VToolStripMenuItem.Text = "表示(V)";
+            // 
+            // IsTopMostCheckBox
+            // 
+            this.IsTopMostCheckBox.CheckOnClick = true;
+            this.IsTopMostCheckBox.Name = "IsTopMostCheckBox";
+            this.IsTopMostCheckBox.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.T)));
+            this.IsTopMostCheckBox.Size = new System.Drawing.Size(197, 22);
+            this.IsTopMostCheckBox.Text = "最前面表示";
+            this.IsTopMostCheckBox.CheckedChanged += new System.EventHandler(this.IsTopMostCheckBox_CheckedChanged);
+            // 
+            // ヘルプHToolStripMenuItem
+            // 
+            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenHelpButton});
+            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
+            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(71, 21);
+            this.ヘルプHToolStripMenuItem.Text = "ヘルプ(H)";
+            // 
+            // OpenHelpButton
+            // 
+            this.OpenHelpButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenHelpButton.Image")));
+            this.OpenHelpButton.Name = "OpenHelpButton";
+            this.OpenHelpButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.H)));
+            this.OpenHelpButton.Size = new System.Drawing.Size(209, 22);
+            this.OpenHelpButton.Text = "ヘルプを表示";
+            this.OpenHelpButton.Click += new System.EventHandler(this.OpenHelpButton_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -164,6 +205,11 @@
             this.columnHeader2.Text = "パス";
             this.columnHeader2.Width = 144;
             // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "サイズ";
+            this.columnHeader3.Width = 89;
+            // 
             // ImagePreviewBox
             // 
             this.ImagePreviewBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -191,52 +237,38 @@
             this.progressBar.Size = new System.Drawing.Size(132, 45);
             this.progressBar.TabIndex = 5;
             // 
-            // columnHeader3
+            // TruePageCheckBox
             // 
-            this.columnHeader3.Text = "サイズ";
-            this.columnHeader3.Width = 89;
+            this.TruePageCheckBox.AutoSize = true;
+            this.TruePageCheckBox.Font = new System.Drawing.Font("MS UI Gothic", 9.75F);
+            this.TruePageCheckBox.Location = new System.Drawing.Point(373, 294);
+            this.TruePageCheckBox.Name = "TruePageCheckBox";
+            this.TruePageCheckBox.Size = new System.Drawing.Size(109, 17);
+            this.TruePageCheckBox.TabIndex = 6;
+            this.TruePageCheckBox.Text = "ページ数の描画";
+            this.TruePageCheckBox.UseVisualStyleBackColor = true;
             // 
-            // 表示VToolStripMenuItem
+            // toolStripMenuItem3
             // 
-            this.表示VToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.IsTopMostCheckBox});
-            this.表示VToolStripMenuItem.Name = "表示VToolStripMenuItem";
-            this.表示VToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
-            this.表示VToolStripMenuItem.Text = "表示(V)";
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(194, 6);
             // 
-            // IsTopMostCheckBox
+            // ReStartButton
             // 
-            this.IsTopMostCheckBox.CheckOnClick = true;
-            this.IsTopMostCheckBox.Name = "IsTopMostCheckBox";
-            this.IsTopMostCheckBox.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.T)));
-            this.IsTopMostCheckBox.Size = new System.Drawing.Size(197, 22);
-            this.IsTopMostCheckBox.Text = "最前面表示";
-            this.IsTopMostCheckBox.CheckedChanged += new System.EventHandler(this.IsTopMostCheckBox_CheckedChanged);
-            // 
-            // ヘルプHToolStripMenuItem
-            // 
-            this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OpenHelpButton});
-            this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
-            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(71, 21);
-            this.ヘルプHToolStripMenuItem.Text = "ヘルプ(H)";
-            // 
-            // OpenHelpButton
-            // 
-            this.OpenHelpButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenHelpButton.Image")));
-            this.OpenHelpButton.Name = "OpenHelpButton";
-            this.OpenHelpButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.H)));
-            this.OpenHelpButton.Size = new System.Drawing.Size(209, 22);
-            this.OpenHelpButton.Text = "ヘルプを表示";
-            this.OpenHelpButton.Click += new System.EventHandler(this.OpenHelpButton_Click);
+            this.ReStartButton.Image = ((System.Drawing.Image)(resources.GetObject("ReStartButton.Image")));
+            this.ReStartButton.Name = "ReStartButton";
+            this.ReStartButton.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.R)));
+            this.ReStartButton.Size = new System.Drawing.Size(197, 22);
+            this.ReStartButton.Text = "再起動";
+            this.ReStartButton.Click += new System.EventHandler(this.ReStartButton_Click);
             // 
             // Source
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 366);
+            this.Controls.Add(this.TruePageCheckBox);
             this.Controls.Add(this.ConvertAsButton);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.ImagePreviewBox);
@@ -281,6 +313,9 @@
         private System.Windows.Forms.ToolStripMenuItem IsTopMostCheckBox;
         private System.Windows.Forms.ToolStripMenuItem ヘルプHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OpenHelpButton;
+        private System.Windows.Forms.CheckBox TruePageCheckBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ReStartButton;
     }
 }
 
