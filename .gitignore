@@ -52,4 +52,4 @@ Mkfile.old
 dkms.conf
 
 src/**/**/obj/Debug
-sc/**/**/bin/Debug
+src/**/**/bin/Debug
