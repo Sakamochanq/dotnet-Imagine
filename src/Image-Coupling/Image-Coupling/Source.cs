@@ -138,7 +138,7 @@ namespace Image_Coupling
                                 // 進捗をLoggerLabelに表示
                                 processed_images++;
                                 progressBar.PerformStep();
-                                LoggerLabel.Text = processed_images + "/" + total_images + " ｜ " + Path.GetFileName(filePath) + "の画像を処理中...";
+                                LoggerLabel.Text = processed_images + "/" + total_images + " ｜ " + "画像を処理中..." + Path.GetFileName(filePath);
                                 
                                 // UIを更新
                                 Application.DoEvents(); 
@@ -146,13 +146,13 @@ namespace Image_Coupling
                                 // 画像の読み込み
                                 using (XImage image = XImage.FromFile(filePath))
                                 {
-                                    LoggerLabel.Text = "新規ページを作成中... " + Path.GetFileName(filePath);
+                                    LoggerLabel.Text = processed_images + "/" + total_images + " ｜ " + "新規ページを作成中... " + Path.GetFileName(filePath);
                                     Application.DoEvents();
 
                                     // 新規ページの追加
                                     PdfPage page = document.AddPage();
 
-                                    LoggerLabel.Text = "画像を描画中... " + Path.GetFileName(filePath);
+                                    LoggerLabel.Text = processed_images + "/" + total_images + " ｜ " + "画像を描画中... " + Path.GetFileName(filePath);
                                     Application.DoEvents();
 
                                     // 画像サイズを指定
@@ -166,7 +166,7 @@ namespace Image_Coupling
 
                                         if (TruePageCheckBox.Checked)
                                         {
-                                            LoggerLabel.Text = "ページ数を描画中... " + Path.GetFileName(filePath);
+                                            LoggerLabel.Text = processed_images + "/" + total_images + " ｜ " + "ページ数を描画中... " + Path.GetFileName(filePath);
                                             Application.DoEvents();
 
                                             //ページ数の描画
