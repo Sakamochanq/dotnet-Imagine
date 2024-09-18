@@ -61,3 +61,19 @@ dotnet add package PdfSharpCore --version 1.3.65
         <img src="./assets/images/Image-Coupling.gif" width="400px">
     </a>
 </div>
+
+<br>
+<br>
+
+### [Optical-Character-Recogniter](./src/Optical-Character-Recogniter/)
+
+GUI application to easily perform OCR.  
+Performs OCR within a specified range.
+```
+dotnet add package Tesseract
+```
+<div align="left">
+    <a href="#">
+        <img src="./assets/images/Optical-Character-Recogniter.gif" width="400px">
+    </a>
+</div>
