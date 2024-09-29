@@ -39,7 +39,37 @@ namespace Optical_Character_Recogniter
             AppendTimer.Tick += AppendTimer_Tick;
         }
 
-        private void LoadImageButton_Click(object sender, EventArgs e)
+        //画像白黒
+        private Bitmap ReversImage(string filename)
+        {
+            // 画像を読み込む
+            Bitmap image = new Bitmap(filename);
+
+            // 画像サイズを取得
+            int width = image.Width;
+            int height = image.Height;
+
+            // ピクセルごとに処理
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    // ピクセルの色を取得
+                    Color originalColor = image.GetPixel(x, y);
+
+                    // グレースケール化する
+                    int grayScale = (int)((originalColor.R * 0.3) + (originalColor.G * 0.59) + (originalColor.B * 0.11));
+
+                    // 新しい色を設定
+                    Color grayColor = Color.FromArgb(grayScale, grayScale, grayScale);
+                    image.SetPixel(x, y, grayColor);
+                }
+            }
+
+            return image;
+        }
+
+    private void LoadImageButton_Click(object sender, EventArgs e)
         {
             // 画像の読み込み
             using (var ofd = new OpenFileDialog() { Filter = "Windows画像形式 (*.png; *.jpg; *.jpeg; *.bmp;) | *.png; *.jpg; *.jpeg; *.bmp;" })
@@ -52,7 +82,7 @@ namespace Optical_Character_Recogniter
                     ExecuteButton.Enabled = true;
 
                     loadImage = ofd.FileName;
-                    LoadImageBox.ImageLocation = loadImage;
+                    LoadImageBox.Image = ReversImage(loadImage);
 
                     // 画像をリサイズしてOCRpictureBoxに表示
                     Image originalImage = Image.FromFile(loadImage);
@@ -71,7 +101,7 @@ namespace Optical_Character_Recogniter
                     // 画像の情報の描画
                     ImageNameLabel.Text = "ファイル名： " + imageName;
                     ImageSizeLabel.Text = "サイズ： " + imageSize.ToString() + " KB";
-                    ImageWidthLabel.Text = "幅：" + imageWidth.ToString() + " px";
+                    ImageWidthLabel.Text = "幅： " + imageWidth.ToString() + " px";
                     ImageHeightLabel.Text = "高さ： " + imageHeight.ToString() + " px";
                 }
             }
