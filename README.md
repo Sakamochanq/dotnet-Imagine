@@ -53,7 +53,7 @@ Released under the [MIT](https://github.com/Sakamochanq/dotnet-Imagine/blob/mast
 You can create PDF documents from multiple images.  
 The "PDFSharpCore" package must be installed.
 ```
-dotnet add package PdfSharpCore --version 1.3.65
+dotnet add package PdfSharpCore
 ```
 
 <div align="left">
