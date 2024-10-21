@@ -72,7 +72,7 @@
             this.ExecuteButton.Name = "ExecuteButton";
             this.ExecuteButton.Size = new System.Drawing.Size(125, 24);
             this.ExecuteButton.TabIndex = 8;
-            this.ExecuteButton.Text = "3　OCRの実行";
+            this.ExecuteButton.Text = "OCRの実行";
             this.ExecuteButton.UseVisualStyleBackColor = true;
             this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click_1);
             // 
@@ -82,7 +82,7 @@
             this.DecAreaButton.Name = "DecAreaButton";
             this.DecAreaButton.Size = new System.Drawing.Size(125, 24);
             this.DecAreaButton.TabIndex = 7;
-            this.DecAreaButton.Text = "2　領域の指定";
+            this.DecAreaButton.Text = "領域の指定";
             this.DecAreaButton.UseVisualStyleBackColor = true;
             this.DecAreaButton.Click += new System.EventHandler(this.DecAreaButton_Click);
             // 
@@ -138,7 +138,7 @@
             this.LoadImageButton.Name = "LoadImageButton";
             this.LoadImageButton.Size = new System.Drawing.Size(125, 24);
             this.LoadImageButton.TabIndex = 1;
-            this.LoadImageButton.Text = "1　画像の読み込み";
+            this.LoadImageButton.Text = "画像の読み込み";
             this.LoadImageButton.UseVisualStyleBackColor = true;
             this.LoadImageButton.Click += new System.EventHandler(this.LoadImageButton_Click);
             // 

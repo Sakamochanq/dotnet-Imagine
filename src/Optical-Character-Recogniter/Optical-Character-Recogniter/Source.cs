@@ -70,7 +70,7 @@ namespace Optical_Character_Recogniter
         }
 
     private void LoadImageButton_Click(object sender, EventArgs e)
-        {
+    {
             // 画像の読み込み
             using (var ofd = new OpenFileDialog() { Filter = "Windows画像形式 (*.png; *.jpg; *.jpeg; *.bmp;) | *.png; *.jpg; *.jpeg; *.bmp;" })
             {
