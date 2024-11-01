@@ -77,3 +77,19 @@ dotnet add package Tesseract
         <img src="./assets/images/Optical-Character-Recogniter.gif" width="400px">
     </a>
 </div>
+
+<br>
+<br>
+
+### [Object-Detector](./src/Object-Detector)
+
+This tool detects object motion from a webcam.  
+Low accuracy uses OpenCV.
+```
+dotnet add package OpenCVSharp4
+```
+<div align="left">
+    <a href="#">
+        <img src="./assets/images/Object-Detector.gif" width="400px">
+    </a>
+</div>
