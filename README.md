@@ -56,7 +56,7 @@ The "PDFSharpCore" package must be installed.
 dotnet add package PdfSharpCore
 ```
 
-[Download]()
+[Download](https://github.com/Sakamochanq/dotnet-Imagine/releases/tag/Image-Coupling)
 
 <div align="left">
     <a href="#">
@@ -75,7 +75,7 @@ Performs OCR within a specified range.
 dotnet add package Tesseract
 ```
 
-[Download]()
+[Download](https://github.com/Sakamochanq/dotnet-Imagine/releases/tag/OCR)
 
 <div align="left">
     <a href="#">
@@ -94,7 +94,7 @@ Low accuracy uses OpenCV.
 dotnet add package OpenCVSharp4
 ```
 
-[Download]()
+[Download](https://github.com/Sakamochanq/dotnet-Imagine/releases/tag/Object-Detector)
 
 <div align="left">
     <a href="#">
