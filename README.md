@@ -101,3 +101,21 @@ dotnet add package OpenCVSharp4
         <img src="./assets/images/Object-Detector.gif" width="400px">
     </a>
 </div>
+
+<br>
+<br>
+
+### [PDF-Extractor](./src/PDF-Extractor/)
+
+Extract images from PDF in a variety of formats.   
+```
+dotnet add package PdfiumViewer
+```
+
+[Download](https://github.com/Sakamochanq/dotnet-Imagine/releases/tag/PDF-Extractor)
+
+<div align="left">
+    <a href="#">
+        <img src="./assets/images/PDF-Extractor.gif" width="400px">
+    </a>
+</div>
